@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="txt"></div>
+    <script>
+        var Calculator = function (eq) {
+            var eqCtl = document.getElementById(eq);
+
+            return {
+                add: function (x, y) {
+                    var val = x + y;
+                    eqCtl.innerHTML = val;
+                }
+            }
+        }
+
+        var calculator = new Calculator('txt');
+        calculator.add(2, 2);
+
+
+    </script>
+</body>
+</html>
