@@ -44,14 +44,35 @@
 
         // }
 
-        for(var i = 0; i < aBtn.length; i++) {
-            aBtn[i].addEventListener('click',(function(lockedInIndex) {
-                return function(e) {
-                    e.preventDefault();
-                    console.log('I am link #' + lockedInIndex)
+        // for(var i = 0; i < aBtn.length; i++) {
+        //     aBtn[i].addEventListener('click',(function(lockedInIndex) {
+        //         return function(e) {
+        //             e.preventDefault();
+        //             console.log('I am link #' + lockedInIndex)
+        //         }
+        //     })(i), 'false')
+        // }
+
+
+        var counter = (function () {
+            var i = 0;
+            return {
+                get: function() {
+                    return i;
+                },
+                set: function(val) {
+                    i = val;
+                },
+                increment: function() {
+                    return ++i;
                 }
-            })(i), 'false')
-        }
+            };
+        }());
+
+        counter.get(); // 0
+        counter.set(3);
+        counter.increment(); // 4
+        counter.increment(); // 5
 
     </script>
 </body>
